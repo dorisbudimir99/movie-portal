@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import {fetchTopRatedMovies, searchMovies, fetchGenres} from "../api/tmdb";
 import MovieList from "../components/MovieList/MovieList";
@@ -60,13 +60,13 @@ function Home() {
     loadMovies();
   }, [searchTerm, selectedGenre, page]);
 
-  const handleMovieClick = (movieId) => {
-    navigate(`/movie/${movieId}`);
-  };
+  const handleMovieClick = useCallback((movieId) => {
+  navigate(`/movie/${movieId}`);
+}, [navigate]);
 
-  const closeModal = () => {
-    navigate("/");
-  };
+const closeModal = useCallback(() => {
+  navigate("/");
+}, [navigate]);
 
   return (
     <div>

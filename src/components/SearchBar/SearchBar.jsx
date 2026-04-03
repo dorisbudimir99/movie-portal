@@ -5,12 +5,16 @@ function SearchBar({ searchTerm, setSearchTerm, setPage }) {
   }
 
   return (
-    <input
-      type="text"
-      placeholder="Search for a movie"
-      value={searchTerm}
-      onChange={handleChange}
-    />
+    <div>
+      <label htmlFor="movie-search">Search Movies</label>
+      <input
+        id="movie-search"
+        type="text"
+        placeholder="Search for a movie"
+        value={searchTerm}
+        onChange={handleChange}
+      />
+    </div>
   );
 }
 

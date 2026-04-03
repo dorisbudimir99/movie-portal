@@ -1,7 +1,14 @@
 .card {
-  border: 1px solid #3f3c3c;
+  background-color: #1e1e2f;
+  color: white;
   padding: 15px;
-  margin: 10px;
-  background: white;
-  border-radius: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background-color: #2a2a40;
 }
